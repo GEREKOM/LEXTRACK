@@ -17,8 +17,7 @@
 
     body {
       min-height: 100vh;
-      background: url('lawyer.webp')
-        no-repeat center center/cover;
+      background: url('lawyer.webp') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,7 +28,6 @@
       overflow-y: auto;
     }
 
-    /* === TITRE DÉROULANT === */
     .scrolling-title {
       font-size: 2.6rem;
       font-weight: 600;
@@ -61,8 +59,7 @@
       color: #ffdd66;
     }
 
-    /* BUTTON */
-    button {
+    .menu-btn {
       background: rgba(255,255,255,0.2);
       border: 2px solid #fff;
       color: #fff;
@@ -73,15 +70,15 @@
       cursor: pointer;
       backdrop-filter: blur(6px);
       transition: all 0.3s ease;
+      margin-bottom: 15px;
     }
 
-    button:hover {
+    .menu-btn:hover {
       background: #fff;
       color: #1a237e;
       transform: translateY(-4px);
     }
 
-    /* === FORMULAIRE === */
     .form-section {
       display: none;
       width: 95%;
@@ -129,65 +126,48 @@
 
 <body>
 
-  <!-- TITRE DÉROULANT -->
   <div class="scrolling-title">
-    <span>مرحبا بكم    -  مكتب الاستاذ اشراغي محمد </span>
+    <span>مرحبا بكم - مكتب الاستاذ اشراغي محمد</span>
   </div>
 
-  <p>المرجو اختيار القائمة </p>
+  <p>المرجو اختيار القائمة</p>
 
-  <button onclick="showForm()">الاجلات</button><br> <!-- délai -->
+  <!-- Boutons du menu -->
+  <button class="menu-btn" onclick="showForm('delai')">الاجلات</button>
+  <button class="menu-btn" onclick="showForm('audiences')">جدول الجلسات</button>
+  <button class="menu-btn" onclick="showForm('procedures')">جدول الاجراءات</button>
 
-  <!-- FORMULAIRE -->
-  <div id="formulaire" class="form-section">
-    <button class="back-btn" onclick="hideForm()">⬅ Retour</button>
-
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLScDQZIItKSYV7Ff-LGqaQU_pjsWosYblxlCszXBO-UxRjbyhw/viewform?embedded=true">
-      Chargement…
-    </iframe>
+  <!-- Formulaires -->
+  <div id="delai" class="form-section">
+    <button class="back-btn" onclick="hideForm('delai')">⬅ Retour</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDQZIItKSYV7Ff-LGqaQU_pjsWosYblxlCszXBO-UxRjbyhw/viewform?embedded=true">Chargement…</iframe>
   </div>
 
-    <button onclick="showForm()">جدول الجلسات</button><br> <!-- audiences -->
-
-  <!-- FORMULAIRE -->
-  <div id="formulaire" class="form-section">
-    <button class="back-btn" onclick="hideForm()">⬅ Retour</button>
-
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfVP6ydyjZO5JerTxBFWxaAwEx7CBPxeXfOIakgtyhdikN3Tw/viewform?embedded=true">
-      Chargement…
-    </iframe>
+  <div id="audiences" class="form-section">
+    <button class="back-btn" onclick="hideForm('audiences')">⬅ Retour</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVP6ydyjZO5JerTxBFWxaAwEx7CBPxeXfOIakgtyhdikN3Tw/viewform?embedded=true">Chargement…</iframe>
   </div>
 
-    <button onclick="showForm()">جدول الاجراءات</button><br> <!-- procédures -->
-
-  <!-- FORMULAIRE -->
-  <div id="formulaire" class="form-section">
-    <button class="back-btn" onclick="hideForm()">⬅ Retour</button>
-
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdZi7VvFFdILznx-ZOV94IB7x8BuKc7FXUHlovQWuh1_uPP6A/viewform?embedded=true">
-      Chargement…
-    </iframe>
+  <div id="procedures" class="form-section">
+    <button class="back-btn" onclick="hideForm('procedures')">⬅ Retour</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZi7VvFFdILznx-ZOV94IB7x8BuKc7FXUHlovQWuh1_uPP6A/viewform?embedded=true">Chargement…</iframe>
   </div>
 
   <script>
-    function showForm() {
+    function showForm(id) {
       document.querySelector(".scrolling-title").style.display = "none";
       document.querySelector("p").style.display = "none";
-      document.querySelector("button").style.display = "none";
-      document.getElementById("formulaire").style.display = "block";
+      document.querySelectorAll(".menu-btn").forEach(btn => btn.style.display = "none");
+      document.getElementById(id).style.display = "block";
     }
 
-    function hideForm() {
+    function hideForm(id) {
       document.querySelector(".scrolling-title").style.display = "block";
       document.querySelector("p").style.display = "block";
-      document.querySelector("button").style.display = "inline-block";
-      document.getElementById("formulaire").style.display = "none";
+      document.querySelectorAll(".menu-btn").forEach(btn => btn.style.display = "inline-block");
+      document.getElementById(id).style.display = "none";
     }
   </script>
 
 </body>
 </html>
-
