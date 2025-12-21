@@ -2,8 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LEXTRACK - Solution pour Avocats</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -12,10 +17,12 @@
       color: #333;
       animation: fadeIn 1.5s ease-in;
     }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
+
     header {
       background: rgba(0,0,0,0.7);
       color: white;
@@ -23,15 +30,18 @@
       text-align: center;
       backdrop-filter: blur(5px);
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5em;
       animation: slideDown 1s ease-out;
     }
+
     @keyframes slideDown {
       from {transform: translateY(-50px); opacity: 0;}
       to {transform: translateY(0); opacity: 1;}
     }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -41,15 +51,18 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       animation: zoomIn 1s ease;
     }
+
     @keyframes zoomIn {
       from {transform: scale(0.9); opacity: 0;}
       to {transform: scale(1); opacity: 1;}
     }
+
     h2 {
       color: #1a1a1a;
       margin-bottom: 20px;
       text-align: center;
     }
+
     .btn {
       display: inline-block;
       margin: 10px;
@@ -59,31 +72,39 @@
       font-weight: bold;
       transition: transform 0.3s;
     }
+
     .btn-trial {
       background: #0078d7;
       color: white;
     }
+
     .btn-final {
       background: #25D366;
       color: white;
     }
+
     .btn:hover {
       transform: scale(1.05);
     }
+
     form {
       margin-top: 30px;
       display: none;
       animation: fadeIn 1s ease;
+      width: 100%;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      padding: 0 15px;
     }
+
     form label {
       display: block;
       font-weight: bold;
       margin-bottom: 6px;
       margin-top: 12px;
     }
+
     form input {
       width: 100%;
       padding: 12px;
@@ -93,28 +114,27 @@
       font-size: 1em;
     }
 
+    .confirm-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1em;
+    }
 
-.confirm-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 1em;
-}
+    .confirm-block input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #25D366;
+      cursor: pointer;
+    }
 
-.confirm-block input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #25D366;
-  cursor: pointer;
-}
-
-.confirm-block label {
-  margin: 0;
-  cursor: pointer;
-}
+    .confirm-block label {
+      margin: 0;
+      cursor: pointer;
+    }
 
     form button {
       display: block;
@@ -129,8 +149,27 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     form button:hover {
       background: #128C7E;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+      }
+
+      .confirm-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -138,7 +177,15 @@
 
 <header>
   <h1>LEXTRACK</h1>
-  <p>La solution intelligente pour les avocats</p>
+  <p style="text-align:center; font-size:1.1em; margin-top:20px; line-height:1.6;">
+Notre application fonctionne comme un <strong>local host</strong> : elle est installée directement sur votre PC, 
+et toutes vos données sont <strong>stockées en local</strong>, sans dépendre d’internet ni de serveurs externes. 
+Elle aide les avocats à <strong>gérer leurs audiences</strong>, <strong>et leurs procédures</strong>, puis
+<strong>suivre attentivement leurs délais</strong> en toute sécurité. 
+Grâce à LEXTRACK, vous bénéficiez d’une solution <strong>fiable, rapide et confidentielle</strong>, 
+adaptée aux besoins des cabinets et praticiens.
+</p>
+
 </header>
 
 <div class="container">
