@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEXTRACK - Solution pour Avocats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+      animation: slideDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.1em;
+      margin: 20px auto;
+      max-width: 900px;
+      line-height: 1.6;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .video-section {
+      max-width: 900px;
+      margin: 30px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: zoomIn 1s ease;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    @keyframes zoomIn { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .btn-trial { background: #0078d7; color: white; }
+    .btn-final { background: #25D366; color: white; }
+    .btn:hover { transform: scale(1.05); }
+
+    form {
+      margin-top: 30px;
+      display: none;
+      animation: fadeIn 1s ease;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      margin-top: 12px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .confirm-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .confirm-block input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #25D366;
+      cursor: pointer;
+    }
+
+    form button {
+      display: block;
+      margin: 30px auto 0 auto;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover { background: #128C7E; }
+
+    #unlockOverlay {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #unlockOverlay button {
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .btn { display: block; width: 100%; margin: 10px auto; text-align: center; }
+      .confirm-block { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>LEXTRACK</h1>
+  <p>La solution intelligente pour les avocats</p>
+</header>
+
+<div class="description">
+  LEXTRACK est une solution <strong>locale et sécurisée</strong> installée directement sur votre PC.  
+  Vos données sont <strong>stockées en local</strong>, sans dépendre d’internet ni de serveurs externes.  
+  Elle aide les avocats à <strong>gérer leurs audiences</strong> et <strong>leurs procédures</strong> puis 
+  <strong>suivre attentivement leurs délais</strong> en toute confidentialité.
+</div>
+
+<div class="video-section">
+  <iframe width="100%" height="400" 
+    src="https://www.youtube.com/embed/TvUR7Oq2ccI" 
+    title="LEXTRACK" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+</div>
+
+<div id="unlockOverlay">
+  <p style="font-weight:bold;">Veuillez regarder la vidéo avant de choisir une option.</p>
+  <button onclick="unlockSection()">✅ J'ai terminé la vidéo</button>
+</div>
+
+<div class="container" id="versionsSection">
+  <h2>Choisissez votre option</h2>
+  <div style="text-align:center;">
+    <a href="#" class="btn btn-trial" onclick="showForm('trialForm')">📄 Version d'essai</a>
+    <a href="#" class="btn btn-final" onclick="showForm('finalForm')">💼 Version finale</a>
+  </div>
+
+  <!-- Formulaire Version d'essai -->
+  <form id="trialForm">
+    <h3 style="text-align:center;">Demande de version d'essai</h3>
+    <label>Date et heure d'installation :</label>
+    <input type="datetime-local" id="trialDate" required>
+
+    <label>Durée (max 15 jours) :</label>
+    <input type="number" id="trialDays" min="1" max="15" required>
+
+    <div class="confirm-block">
+      <input type="checkbox" id="trialConfirm" required>
+      <label for="trialConfirm">Oui, je confirme ma demande d'essai</label>
+    </div>
+
+    <button type="button" onclick="sendTrial()">Envoyer via WhatsApp</button>
+  </form>
+
+  <!-- Formulaire Version finale -->
+  <form id="finalForm">
+    <h3 style="text-align:center;">Commande version finale</h3>
+    <label>Date et heure d'installation :</label>
+    <input type="datetime-local" id="finalDate" required>
+
+    <label>Prix :</label>
+    <input type="text" id="finalPrice" value="2000 DH" readonly>
+
+    <div class="confirm-block">
+      <input type="checkbox" id="finalConfirm" required>
+      <label for="finalConfirm">Oui, je confirme le prix d'achat</label>
+    </div>
+
+    <button type="button" onclick="sendFinal()">Envoyer via WhatsApp</button>
+  </form>
+</div>
+
+<script>
+  function showForm(id) {
+    document.getElementById('trialForm').style.display = 'none';
+        document.getElementById('finalForm').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function sendTrial() {
+    if (!document.getElementById('trialConfirm').checked) {
+      alert("Veuillez confirmer votre demande d'essai.");
+      return;
+    }
+    const date = document.getElementById('trialDate').value;
+    const days = document.getElementById('trialDays').value;
+    const msg = `Bonjour LEXTRACK, je veux commander la version d'essai.\nDate: ${date}\nDurée: ${days} jours\nConfirmation: Oui`;
+    window.open(`https://wa.me/212625454176?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function sendFinal() {
+    if (!document.getElementById('finalConfirm').checked) {
+      alert("Veuillez confirmer le prix d'achat.");
+      return;
+    }
+    const date = document.getElementById('finalDate').value;
+    const price = document.getElementById('finalPrice').value;
+    const msg = `Bonjour LEXTRACK, je veux commander la version finale.\nDate: ${date}\nPrix confirmé: ${price}\nConfirmation: Oui`;
+    window.open(`https://wa.me/212625454176?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // ✅ Déverrouillage manuel après la vidéo
+  function unlockSection() {
+    document.getElementById('versionsSection').style.pointerEvents = "auto";
+    document.getElementById('versionsSection').style.opacity = "1";
+    document.getElementById('unlockOverlay').style.display = "none";
+  }
+</script>
+
+</body>
+</html>
